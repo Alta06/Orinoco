@@ -9,6 +9,8 @@ const furnitureRoutes = require('./routes/furniture');
 
 const app = express();
 
+
+
 mongoose.connect(
   'mongodb+srv://will:nAcmfCoHGDgzrCHG@cluster0-pme76.mongodb.net/test?retryWrites=true',
   { useNewUrlParser: true })
@@ -27,7 +29,10 @@ app.use((req, res, next) => {
   next();
 });
 
+
+
 app.use('/images', express.static(path.join(__dirname, 'images')));
+app.use(express.static(__dirname));
 
 app.use(bodyParser.json());
 
