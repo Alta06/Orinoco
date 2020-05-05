@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,37 +10,88 @@
 
     <title>Orinounours</title>
 </head>
+
 <body>
 
     <div class="container">
 
-    <header>
-        <nav>
-            <h1> <a href="index.html">Orinounours</a> </h1>
-            <button id="basketIco" " href="cart.html"><i class="fas fa-shopping-cart"></i></button>
+        <header>
+            <nav>
+                <h1> <a href="index.html">Orinounours</a> </h1>
+                <a id="cartIco" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
 
-        </nav>
-    </header>
+            </nav>
+        </header>
 
+        <section id="cart">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Article</th>
+                        <th>Quantité</th>
+                        <th>Prix</th>
 
-    
-    <footer>
-        <p>Orinounours by Orinoco</p>
-        <ul>
-            <li><i class="fab fa-twitter-square"></i></li>
-            <li><i class="fab fa-facebook-square"></i></li>
-            <li><i class="fab fa-instagram-square"></i></i></li>
-        </ul>
-    </footer>
+                    </tr>
+                </thead>
+                <tbody id="arrayBody">
 
-</div>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Total</td>
+                        <td></td>
+                        <td></td>
+                        <td id="total"></td>
 
-    <script src="/dist/polyfill.bundle.js"></script>
-    <script src="/dist/app.bundle.js"></script>
-    <script src="ajax.js"></script>
-    <script src="singleProduct.js"></script>
-    
-   
+                    </tr>
+                </tfoot>
+            </table>
+            <div id="clearDiv">
+                <button id="clear">Vider le panier</button>
+            </div>
+
+        </section>
+
+        <section>
+            <h2 id="formTitle">Remplissez le formulaire pour confirmer la commande</h2>
+          
+                <form id="myForm" action="/order" method="POST">
+                    <label for="firstName">Prénom</label>
+                    <input type="text" class="text" name="firstName" id="firstName">
+                    <label for="lastName">Nom</label>
+                    <input type="text" class="text" name="lastName" id="lastName">
+                    <label for="adress">Adresse</label>
+                    <input type="text" class="text" name="adress" id="adress">
+                    <label for="city">Ville</label>
+                    <input type="text" class="text" name="city" id="city">
+                    <label for="email">Email</label>
+                    <input type="email" class="text" name="email" id="email">
+                    <input id="btnSubmit" type="submit" value="Envoyer">
+                </form>
            
+        </section>
+
+
+        <footer>
+            <p>Orinounours by Orinoco</p>
+            <ul>
+                <li><i class="fab fa-twitter-square"></i></li>
+                <li><i class="fab fa-facebook-square"></i></li>
+                <li><i class="fab fa-instagram-square"></i></i></li>
+            </ul>
+        </footer>
+
+    </div>
+
+    <script src="storage.js"></script>
+    <script src="ajax.js"></script>
+    <script src="cart.js"></script>
+    <script src="form.js"></script>
+    
+
+
+
 </body>
+
 </html>

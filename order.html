@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
-
+    
+      
     <title>Orinounours</title>
 </head>
 <body>
@@ -16,14 +18,19 @@
     <header>
         <nav>
             <h1> <a href="index.html">Orinounours</a> </h1>
-            <button id="basketIco" " href="cart.html"><i class="fas fa-shopping-cart"></i></button>
-
+             <a id="cartIco" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
         </nav>
     </header>
 
+    <section>
+        <h2>Merci d'avoir commandé</h2>
+        <p id="test">Vous êtes l'heureux détenteur de :</p>
+        <p>Montant de la commande :</p>
+        <p>n° de commande :</p>
 
-    
-    
+        <p id="test"></p>
+    </section>
+
     <footer>
         <p>Orinounours by Orinoco</p>
         <ul>
@@ -35,12 +42,10 @@
 
 </div>
 
-    <script src="/dist/polyfill.bundle.js"></script>
-    <script src="/dist/app.bundle.js"></script>
+
     <script src="ajax.js"></script>
-    <script src="singleProduct.js"></script>
-    
-   
-           
+    <script src="storage.js"></script>
+    <script src="form.js"></script>
+
 </body>
 </html>

@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
     <title>Orinounours</title>
 </head>
@@ -19,11 +18,10 @@
         <header>
             <nav>
                 <h1> <a href="index.html">Orinounours</a> </h1>
-                <a id="basketIco" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a id="cartIco" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
 
             </nav>
         </header>
-
 
         <section id="article">
             <div id="product">
@@ -38,11 +36,9 @@
                 <select name="color" id="colorSelect">
                     <option value="chooseColor">--Choisissez une couleur--</option>
                 </select>
-                <a id="basketIco" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a id="addToCart" href="#"><i class="fas fa-shopping-cart"></i></a>
 
             </div>
-            
-
         </section>
 
 
@@ -57,10 +53,9 @@
 
     </div>
 
-    <script src="/dist/polyfill.bundle.js"></script>
-    <script src="/dist/app.bundle.js"></script>
     <script src="ajax.js"></script>
     <script src="singleProduct.js"></script>
+    <script src="storage.js"></script>
 
 
 

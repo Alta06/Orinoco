@@ -4,98 +4,200 @@ body {
 }
 
 $principalClr: #BCAAA4;
+$secondaryClr: #EFEBE9;
 
 header {
-    width: 100%;
     background-color: $principalClr;
 }
 
 nav {
     display: flex;
     height: 70px;
+    justify-content: space-between;
+
     h1 {
         font-family: 'Permanent Marker', cursive;
         font-size: 3em;
-        margin: auto;
+        margin: 0 0 0 25px;
     }
-    a{
+
+    a {
         color: black;
         text-decoration: none;
-        text-align: center;
+        align-self: center;
     }
 }
 
-#basketIco {
-    align-self: center;
+#cartIco,
+#addToCart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 2em;
     width: 100px;
-    background-color: #EFEBE9;
+    height: 50px;
+    background-color: $secondaryClr;
     border-radius: 15px;
-    border: 1px #EFEBE9 thin;
+    border: 1px $secondaryClr thin;
     margin: 0 20px;
 }
 
 h2 {
     text-align: center;
     font-size: 3.5em;
+    font-family: 'Kalam', cursive;
 }
 
 img {
     width: 350px;
 }
 
-#article{
+#article {
     display: flex;
-    #custom{
+
+    #custom {
         display: flex;
         flex-direction: column;
         align-self: center;
         margin-right: 25px;
-    #price {
-        font-size: 3em;
-    }
-    #basketIco {
-        margin-top: 50px;
-        color: black;
-        text-align: center;
-    }
+
+        #price {
+            font-size: 3em;
+        }
+
+        #addToCart {
+            width: 180px;
+            height: 50px;
+            margin-top: 50px;
+            color: black;
+            text-align: center;
+        }
+
+        label {
+            font-size: 1.5em;
+        }
     }
 }
 
-#product, .products {
+#product,
+.products {
     display: flex;
     width: 500px;
     flex-direction: column;
     margin: auto;
     align-items: center;
 
-    #productImg, img {
+    #productImg,
+    img {
         width: 450px;
     }
 
-    #name, h3 {
+    #name,
+    h3 {
         font-size: 3em;
+        font-family: 'Kalam', cursive;
     }
 
-    #description, .description {
+    #description,
+    .description {
         font-size: 1.2em;
     }
 
-    .price{
+    .price {
         font-size: 2em;
     }
 }
 
+#addToCart {
+    margin-bottom: 50px;
+}
 
+#formTitle {
+    font-size: 2em;
+}
+
+#cart {
+    table {
+        width: 800px;
+        margin: auto;
+        empty-cells: hide;
+
+        thead {
+            font-size: 2em;
+        }
+
+        tbody, tfoot {
+            font-size: 2em;
+
+            td {
+                border-bottom: solid black 2px;
+                margin-bottom: 25px;
+                text-align: center;
+
+                img {
+                    width: 100px;
+                }
+            }
+            .tdPrice {
+                width: 30%;
+            }
+
+        }
+    }
+}
+#clearDiv{
+    display: flex;
+    #clear {
+        margin: auto;
+        background-color: $secondaryClr;
+        width: 200px;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 25px auto;
+    width: 300px;
+
+    label {
+        font-size: 1.3em;
+        margin-left: 15px;
+    }
+
+    .text {
+        font-size: 1.4em;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        outline: 0;
+        border-top: #ffffff 2px solid;
+        border-right: #ffffff 2px solid;
+        border-left: solid 2px #292929;
+        border-bottom: solid 2px #2e2e2e;
+        color: rgb(61, 61, 61);
+        transition: width .5s ease-in-out, border .5s ease-in-out;
+    }
+
+    .text:focus {
+        border-right: solid 2px #222222;
+        border-top: solid 2px #222222;
+    }
+}
+
+#btnSubmit {
+    font-size: 1.4em;
+    border-radius: 15px;
+    background-color: $secondaryClr;
+}
 
 footer {
     height: 100px;
-    width: 100%;
     background-color: $principalClr;
-    
-    p{
+
+    p {
         text-align: center;
     }
+
     ul {
         list-style: none;
         display: flex;
@@ -105,6 +207,25 @@ footer {
         margin: auto;
         padding: 0;
     }
-    
 }
 
+@media all and (max-width:768px) {
+
+    #cart {
+        table {
+            width: 600px;
+            margin: auto;
+            empty-cells: hide;
+
+            thead {
+                font-size: 1.5em;
+            }
+
+            tbody {
+                font-size: 1.5em;
+
+            }
+        }
+    }
+
+}
