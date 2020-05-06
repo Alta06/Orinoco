@@ -56,17 +56,17 @@
         <section>
             <h2 id="formTitle">Remplissez le formulaire pour confirmer la commande</h2>
           
-                <form id="myForm" action="/order" method="POST">
+                <form id="myForm" action="/order" method="POST" >
                     <label for="firstName">Prénom</label>
-                    <input type="text" class="text" name="firstName" id="firstName">
+                    <input type="text" class="text" name="firstName" id="firstName" required>
                     <label for="lastName">Nom</label>
-                    <input type="text" class="text" name="lastName" id="lastName">
+                    <input type="text" class="text" name="lastName" id="lastName" required>
                     <label for="adress">Adresse</label>
-                    <input type="text" class="text" name="adress" id="adress">
+                    <input type="text" class="text" name="address" id="adress" required>
                     <label for="city">Ville</label>
-                    <input type="text" class="text" name="city" id="city">
+                    <input type="text" class="text" name="city" id="city" required>
                     <label for="email">Email</label>
-                    <input type="email" class="text" name="email" id="email">
+                    <input type="email" class="text" name="email" id="email" required>
                     <input id="btnSubmit" type="submit" value="Envoyer">
                 </form>
            

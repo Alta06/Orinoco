@@ -5,7 +5,6 @@ if (storageCart) {
 }
 
 if (cart) {
-    console.log(cart);
 
     for (const id of cart) {
 
@@ -23,14 +22,10 @@ if (cart) {
             tdPrice.setAttribute("class", "tdPrice");
             qte.setAttribute("id", "qte");
 
-           
                 img.src = article.imageUrl;
                 tdName.textContent = article.name;
                 tdPrice.textContent = (article.price / 100);
                 qte.textContent = 1;
-            
-
-            
 
             document.getElementById('clear').addEventListener('click', function (event) {
                 cart = [];
@@ -55,8 +50,12 @@ if (cart) {
             prices[i].textContent += ",00 €";
         };
         document.getElementById('total').textContent = (total +"€");
+        localStorage.setItem('total', JSON.stringify(total));
     }, 500);
 
+    
+
+    
 
 
     /*

@@ -1,58 +1,62 @@
+var products = JSON.parse(localStorage.getItem('cart'));
 
+var data = new Object();
 
-/* (function () {
-     function toJSONString(form) {
+(function () {
+    function toJSONString(form) {
         var contact = {};
-         var elements = form.querySelectorAll("input, select, textarea");
-         for (var i = 0; i < elements.length; ++i) {
-             var element = elements[i];
-             var name = element.name;
-             var value = element.value;
+        var elements = form.querySelectorAll("input");
+        for (var i = 0; i < elements.length; ++i) {
+            var element = elements[i];
+            var name = element.name;
+            var value = element.value;
 
-             if (name) {
-                 contact[name] = value;
-             }
-         }
-         return JSON.stringify(contact);
-     } */
-    /* function post (path, params, method='post') {
+            if (name) {
+                contact[name] = value;
+            }
+        }
 
-         const form = document.getElementById("myForm");
+        return contact;
+    }
 
-         form.method = method;
-         form.action = path;
-         for (const key in params) {
-             if (params.hasOwnProperty(key)) {
-                 const hiddenField = document.createElement('input');
-                 hiddenField.type = 'hidden';
-                 hiddenField.name = key;
-                 hiddenField.value = params[key];
+    var form = document.getElementById("myForm");
+    var output = document.getElementById("cart");
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+            var contact = toJSONString(this);
 
-                 form.appendChild(hiddenField);
-             }
-         }
+            data = {
+                "contact": contact,
+                "products": products
+            };
+            data = JSON.stringify(data);
 
-         document.body.appendChild(form);
-  form.submit();
-};
-;
+            var request = new XMLHttpRequest();
+            request.open("POST", "http://localhost:3000/api/teddies/order");
+            request.setRequestHeader("Content-Type", "application/json");
+            request.send(data);
+            
+            
+            setTimeout(function () {
+                if (request.status == 201) {
+                    var reponseJson = request.responseText;
+                    var reponse = JSON.parse(reponseJson);
+                    console.log(reponse.contact.firstName);
+                    console.log(reponse.orderId);
+                    console.log(reponse.products.name);
+                    var testStorage = localStorage.getItem('total');
+                    var totalPrice = JSON.parse(testStorage);
 
+                    console.log(totalPrice);
+                    localStorage.setItem('firstName', JSON.stringify(reponse.contact.firstName));
+                    localStorage.setItem('lastName', JSON.stringify(reponse.contact.lastName));
+                    localStorage.setItem('orderId', JSON.stringify(reponse.orderId));
+                    localStorage.setItem('totalPrice', JSON.stringify(totalPrice));
 
-  post ('/order.html', {name: 'test'});
-
-  document.getElementById('test').textContent = param; */
-  /* 
-         form.addEventListener("submit", function (e) {
-             e.preventDefault();
-             var order = toJSONString(this) + storageCart;
-             output.innerHTML += json;
-             output.innerHTML += products;
-
-            console.log(contact);
-         }, false);
- */
-  
-
-
-
-    
+                    window.location = "http://localhost:3000/order.html"
+                }
+            }, 100)
+        },
+        false);
+})
+();

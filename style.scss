@@ -49,7 +49,7 @@ h2 {
 }
 
 img {
-    width: 350px;
+    width: 100%;
 }
 
 #article {
@@ -66,7 +66,6 @@ img {
         }
 
         #addToCart {
-            width: 180px;
             height: 50px;
             margin-top: 50px;
             color: black;
@@ -82,14 +81,13 @@ img {
 #product,
 .products {
     display: flex;
-    width: 500px;
     flex-direction: column;
     margin: auto;
     align-items: center;
 
     #productImg,
     img {
-        width: 450px;
+        margin-top: 35px;
     }
 
     #name,
@@ -100,11 +98,11 @@ img {
 
     #description,
     .description {
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
 
     .price {
-        font-size: 2em;
+        font-size: 2.5em;
     }
 }
 
@@ -118,7 +116,6 @@ img {
 
 #cart {
     table {
-        width: 800px;
         margin: auto;
         empty-cells: hide;
 
@@ -209,11 +206,18 @@ footer {
     }
 }
 
+.orderConfirm {
+    p {
+        text-align: center;
+    font-size: 2em;
+    }
+    
+}
+
 @media all and (max-width:768px) {
 
     #cart {
         table {
-            width: 600px;
             margin: auto;
             empty-cells: hide;
 

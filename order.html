@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,45 +8,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
-    
-      
+
+
     <title>Orinounours</title>
 </head>
+
 <body>
 
     <div class="container">
 
-    <header>
-        <nav>
-            <h1> <a href="index.html">Orinounours</a> </h1>
-             <a id="cartIco" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-        </nav>
-    </header>
+        <header>
+            <nav>
+                <h1> <a href="index.html">Orinounours</a> </h1>
+                <a id="cartIco" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+            </nav>
+        </header>
 
-    <section>
-        <h2>Merci d'avoir commandé</h2>
-        <p id="test">Vous êtes l'heureux détenteur de :</p>
-        <p>Montant de la commande :</p>
-        <p>n° de commande :</p>
+        <section class="orderConfirm">
+            <h2>Merci d'avoir commandé</h2>
+            <p id="name"></p>
+            <p id="amount"></p>
+            <p id="orderId"></p>
 
-        <p id="test"></p>
-    </section>
 
-    <footer>
-        <p>Orinounours by Orinoco</p>
-        <ul>
-            <li><i class="fab fa-twitter-square"></i></li>
-            <li><i class="fab fa-facebook-square"></i></li>
-            <li><i class="fab fa-instagram-square"></i></i></li>
-        </ul>
-    </footer>
+            <p id="test"></p>
+        </section>
 
-</div>
+        <footer>
+            <p>Orinounours by Orinoco</p>
+            <ul>
+                <li><i class="fab fa-twitter-square"></i></li>
+                <li><i class="fab fa-facebook-square"></i></li>
+                <li><i class="fab fa-instagram-square"></i></i></li>
+            </ul>
+        </footer>
 
+    </div>
 
     <script src="ajax.js"></script>
     <script src="storage.js"></script>
-    <script src="form.js"></script>
-
+    <script src="order.js"></script>
 </body>
+
 </html>

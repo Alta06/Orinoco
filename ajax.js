@@ -23,10 +23,10 @@ function ajaxGet(url, callback) {
 function ajaxPost(url, data, callback, isJson) {
     var req = new XMLHttpRequest();
     req.open("POST", url);
-    req.addEventListener("load", function () {
+    req.addEventListener("readystatechange", function () {
         if (req.status >= 200 && req.status < 400) {
             // Appelle la fonction callback en lui passant la réponse de la requête
-            callback(req.responseText);
+            callback(req.body);
         } else {
             console.error(req.status + " " + req.statusText + " " + url);
         }

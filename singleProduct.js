@@ -1,3 +1,5 @@
+
+
 var url_string = window.location.href;
 var url = new URL(url_string);
 var id = url.searchParams.get("id");
@@ -41,6 +43,4 @@ ajaxGet("http://localhost:3000/api/teddies/" + id, function (reponse) {
         
         localStorage.setItem('cart', JSON.stringify(cart));
     });
-    console.log(cart);
-
 });
