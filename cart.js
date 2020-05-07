@@ -21,6 +21,7 @@ if (cart) {
             var qte = document.createElement("td");
             tdPrice.setAttribute("class", "tdPrice");
             qte.setAttribute("id", "qte");
+            tdImg.setAttribute("id", "tdImg");
 
                 img.src = article.imageUrl;
                 tdName.textContent = article.name;
