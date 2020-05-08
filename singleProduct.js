@@ -34,10 +34,9 @@ ajaxGet("http://localhost:3000/api/teddies/" + id, function (reponse) {
 
     var numberOfproduct = 1;
 
-    addToCart.addEventListener('click', function (event) {
-      
+    addToCart.addEventListener('click', function () {
                 cart.push(id);
-                document.getElementById('cartIco').textContent = cart.length;
+                document.getElementById('popProduct').textContent = cart.length;
             
             numberOfproduct++;
         

@@ -1,0 +1,121 @@
+@import "./utils/variables";
+@import "./base/base";
+@import "./layouts/form";
+@import "./components/buttons";
+@import "./pages/index";
+@import "./pages/product";
+@import "./pages/cart";
+@import "./pages/order";
+
+@media all and (max-width:425px) {
+    nav {
+        h1 {
+            font-size: 2.5em;
+            margin: auto 0;
+
+            a {
+                color: $secondaryClr;
+            }
+        }
+
+        #cartIco {
+            margin: auto 0;
+            color: $principalClr;
+        }
+    }
+
+    .products {
+        img {
+            width: 100%;
+            margin: 0;
+        }
+
+        h3 {
+            margin-bottom: 0;
+        }
+
+        .description {
+            width: 80%;
+        }
+    }
+
+    #article {
+        flex-direction: column;
+
+        #product {
+            h3 {
+                margin-bottom: 0;
+            }
+
+            #productImg {
+                width: 80%;
+            }
+
+            #description {
+                width: 90%;
+            }
+        }
+
+        #custom {
+            margin: auto;
+
+            #price {
+                font-size: 2em;
+                margin: auto auto 25px;
+            }
+
+            #addToCart {
+                margin: 25px auto;
+            }
+        }
+    }
+
+    #cart {
+        h2 {
+            font-size: 2em;
+            margin-bottom: 50px;
+        }
+
+        table {
+            margin: auto;
+            empty-cells: hide;
+            color: $principalClr;
+
+            thead {
+                font-size: 1.5em;
+            }
+
+            tbody,
+            tfoot {
+                font-size: 1.5em;
+
+                td {
+                    margin-bottom: 25px;
+                    text-align: center;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                #tdImg {
+                    width: 30%;
+                }
+
+                .tdPrice {
+                    width: 30%;
+                }
+            }
+
+            tfoot {
+                line-height: 300%;
+            }
+        }
+    }
+
+    footer {
+        ul {
+            width: 70%;
+        }
+    }
+}

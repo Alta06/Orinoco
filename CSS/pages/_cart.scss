@@ -1,0 +1,52 @@
+#cart {
+    h2 {
+        font-size: 3em;
+        margin-bottom: 50px;
+    }
+
+    table {
+        margin: auto;
+        empty-cells: hide;
+        color: $principalClr;
+
+        thead {
+            font-size: 2em;
+        }
+
+        tbody,
+        tfoot {
+            font-size: 2em;
+
+            td {
+                margin-bottom: 25px;
+                text-align: center;
+
+                img {
+                    width: 40%;
+                }
+            }
+
+            #tdImg {
+                width: 30%;
+            }
+
+            .tdPrice {
+                width: 30%;
+            }
+        }
+
+        tfoot {
+            line-height: 300%;
+        }
+    }
+}
+
+#clearDiv {
+    display: flex;
+    margin-bottom: 100px;
+
+    #clear {
+        margin: auto;
+    }
+}
+

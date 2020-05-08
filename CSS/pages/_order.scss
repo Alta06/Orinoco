@@ -1,0 +1,19 @@
+.orderConfirm {
+    p {
+        text-align: center;
+        font-size: 2em;
+        color: $principalClr;
+    }
+}
+
+@media all and (max-width:425px) {
+    .orderConfirm {
+        h2 {
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.5em;
+        }
+    }
+    
+}

@@ -5,7 +5,6 @@ if (storageCart) {
 }
 
 if (cart) {
-
     for (const id of cart) {
 
         ajaxGet("http://localhost:3000/api/teddies/" + id, function (reponse) {

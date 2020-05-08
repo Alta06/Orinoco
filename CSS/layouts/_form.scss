@@ -1,0 +1,38 @@
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 25px auto;
+    width: 300px;
+    color: $principalClr;
+
+    label {
+        font-size: 1.3em;
+        margin-left: 15px;
+    }
+
+    .text {
+        font-size: 1.4em;
+        color: $principalClr;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        outline: 0;
+        border-top: #ffffff 2px solid;
+        border-right: #ffffff 2px solid;
+        border-left: solid 2px $principalClr;
+        border-bottom: solid 2px $principalClr;
+        transition: width .5s ease-in-out, border .5s ease-in-out;
+        
+        
+    }
+
+    .text:focus {
+        border-right: solid 2px $principalClr;
+        border-top: solid 2px $principalClr;
+        color: $principalClr;
+    }
+    
+}
+
+#formTitle {
+    font-size: 2em;
+}

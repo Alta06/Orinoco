@@ -1,0 +1,31 @@
+
+
+.products {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    color: $principalClr;
+
+    img {
+        margin-top: 35px;
+    }
+
+    h3 {
+        font-size: 3em;
+        font-family: 'Kalam', cursive;
+        border-bottom: solid 3px $principalClr;
+
+    }
+
+    .description {
+        font-size: 1.3em;
+        color: $principalClr;
+        width: 70%;
+    }
+
+    .price {
+        font-size: 2.5em;
+    }
+}
