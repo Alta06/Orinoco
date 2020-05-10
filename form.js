@@ -1,5 +1,4 @@
 var products = JSON.parse(localStorage.getItem('cart'));
-
 var data = new Object();
 
 (function () {
@@ -22,7 +21,7 @@ var data = new Object();
     var form = document.getElementById("myForm");
     var output = document.getElementById("cart");
     form.addEventListener("submit", function (e) {
-        e.preventDefault();
+            e.preventDefault();
             var contact = toJSONString(this);
 
             data = {
@@ -35,19 +34,14 @@ var data = new Object();
             request.open("POST", "http://localhost:3000/api/teddies/order");
             request.setRequestHeader("Content-Type", "application/json");
             request.send(data);
-            
-            
+
             setTimeout(function () {
                 if (request.status == 201) {
                     var reponseJson = request.responseText;
                     var reponse = JSON.parse(reponseJson);
-                    console.log(reponse.contact.firstName);
-                    console.log(reponse.orderId);
-                    console.log(reponse.products.name);
                     var testStorage = localStorage.getItem('total');
                     var totalPrice = JSON.parse(testStorage);
 
-                    console.log(totalPrice);
                     localStorage.setItem('firstName', JSON.stringify(reponse.contact.firstName));
                     localStorage.setItem('lastName', JSON.stringify(reponse.contact.lastName));
                     localStorage.setItem('orderId', JSON.stringify(reponse.orderId));

@@ -1,5 +1,3 @@
-
-
 var url_string = window.location.href;
 var url = new URL(url_string);
 var id = url.searchParams.get("id");
@@ -15,7 +13,7 @@ var addToCart = document.getElementById('addToCart');
 ajaxGet("http://localhost:3000/api/teddies/" + id, function (reponse) {
     // Transforme la réponse en un tableau d'articles
     var article = JSON.parse(reponse);
-
+    
     img.src = article.imageUrl;
     img.setAttribute("alt", "Ours en peluche " + article.name);
     title.textContent = article.name;
@@ -36,8 +34,13 @@ ajaxGet("http://localhost:3000/api/teddies/" + id, function (reponse) {
 
     addToCart.addEventListener('click', function () {
                 cart.push(id);
+
+                if (!document.getElementById('popProduct')) {
+                var pop = document.createElement('span');
+                cartIco.appendChild(pop);
+                pop.setAttribute('id', 'popProduct');
+                }  
                 document.getElementById('popProduct').textContent = cart.length;
-            
             numberOfproduct++;
         
         localStorage.setItem('cart', JSON.stringify(cart));

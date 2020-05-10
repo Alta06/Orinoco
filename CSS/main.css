@@ -24,14 +24,6 @@ nav h1 {
   margin: 0 0 0 25px;
 }
 
-nav a {
-  color: #EEEEEE;
-  text-decoration: none;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
 h2 {
   text-align: center;
   font-size: 3.5em;
@@ -40,7 +32,15 @@ h2 {
   margin-bottom: 0;
 }
 
-a,
+a {
+  width: 60%;
+  color: #EEEEEE;
+  text-decoration: none;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 img {
   width: 60%;
 }
@@ -131,8 +131,7 @@ form .text:focus {
   font-size: 2em;
 }
 
-#cartIco,
-#addToCart {
+#cartIco {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -151,6 +150,41 @@ form .text:focus {
   margin: 0 20px;
 }
 
+#addToCart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2em;
+  width: 100px;
+  height: 50px;
+  background-color: #EEEEEE;
+  color: #795548;
+  border-radius: 15px;
+  margin: 0 20px;
+  -webkit-box-shadow: 1px 2px 13px #a2a2a2;
+          box-shadow: 1px 2px 13px #a2a2a2;
+  margin-top: 50px;
+  width: 80%;
+}
+
+#addToCart svg {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+#addToCart:hover svg {
+  -webkit-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+}
+
 #popProduct {
   font-size: 18px;
   color: #EEEEEE;
@@ -158,8 +192,9 @@ form .text:focus {
   border-radius: 50px;
   width: 20px;
   text-align: center;
-  -webkit-animation: pop 2s ease-in-out forwards;
-          animation: pop 2s ease-in-out forwards;
+  margin-left: 8px;
+  -webkit-animation: pop 1s ease-in-out forwards;
+          animation: pop 1s ease-in-out forwards;
 }
 
 @-webkit-keyframes pop {
@@ -190,6 +225,10 @@ form .text:focus {
   border-radius: 15px;
   background-color: #EEEEEE;
   color: #795548;
+  border: 2px solid #795548;
+  -webkit-box-shadow: 1px 2px 13px #a2a2a2;
+          box-shadow: 1px 2px 13px #a2a2a2;
+  cursor: pointer;
 }
 
 .products {
@@ -263,23 +302,6 @@ form .text:focus {
 
 #article #custom #price {
   font-size: 3em;
-}
-
-#article #custom #addToCart {
-  margin-top: 50px;
-  width: 80%;
-}
-
-#article #custom #addToCart svg {
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
-  -webkit-transition: ease-in-out 0.5s;
-  transition: ease-in-out 0.5s;
-}
-
-#article #custom #addToCart:hover svg {
-  -webkit-transform: rotate(-25deg);
-          transform: rotate(-25deg);
 }
 
 #article #custom label {
