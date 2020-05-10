@@ -9,6 +9,8 @@
     color: $principalClr;
     border-radius: 15px;
     margin: 0 20px;
+    box-shadow: 1px 2px 13px darken($secondaryClr, $amount: 30%) ;
+
 }
 
 #cartIco {
@@ -17,7 +19,6 @@
 
 #addToCart {
     @include cartButton();
-    box-shadow: 1px 2px 13px darken($secondaryClr, $amount: 30%) ;
     margin-top: 50px;
     width: 80%;
 
@@ -53,14 +54,27 @@
     }
 }
 
-#btnSubmit,
-#clear {
-    font-size: 1.4em;
-    border-radius: 15px;
-    background-color: $secondaryClr;
-    color: $principalClr;
-    border: 2px solid $principalClr;
+#btnSubmit {
+    @include cartButton();
     box-shadow: 1px 2px 13px darken($secondaryClr, $amount: 30%) ;
+    margin: 35px 0;
+    width: 100%;
     cursor: pointer;
 
+}
+
+#clear {
+    @include cartButton();
+    width: 35%;
+    cursor: pointer;
+
+}
+
+
+@media all and (max-width:425px) {
+
+    #clear {
+        font-size: 1.5em;
+        width: 60%;
+    }
 }

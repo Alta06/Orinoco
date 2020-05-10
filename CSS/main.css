@@ -104,14 +104,14 @@ form {
 
 form label {
   font-size: 1.3em;
-  margin-left: 15px;
+  margin-bottom: 10px;
 }
 
 form .text {
   font-size: 1.4em;
   color: #795548;
   margin-bottom: 20px;
-  border-radius: 5px;
+  border-radius: 3px;
   outline: 0;
   border-top: #ffffff 2px solid;
   border-right: #ffffff 2px solid;
@@ -119,6 +119,7 @@ form .text {
   border-bottom: solid 2px #795548;
   -webkit-transition: width .5s ease-in-out, border .5s ease-in-out;
   transition: width .5s ease-in-out, border .5s ease-in-out;
+  padding: 5px;
 }
 
 form .text:focus {
@@ -148,6 +149,8 @@ form .text:focus {
   color: #795548;
   border-radius: 15px;
   margin: 0 20px;
+  -webkit-box-shadow: 1px 2px 13px #a2a2a2;
+          box-shadow: 1px 2px 13px #a2a2a2;
 }
 
 #addToCart {
@@ -219,16 +222,59 @@ form .text:focus {
   }
 }
 
-#btnSubmit,
-#clear {
-  font-size: 1.4em;
-  border-radius: 15px;
+#btnSubmit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2em;
+  width: 100px;
+  height: 50px;
   background-color: #EEEEEE;
   color: #795548;
-  border: 2px solid #795548;
+  border-radius: 15px;
+  margin: 0 20px;
   -webkit-box-shadow: 1px 2px 13px #a2a2a2;
           box-shadow: 1px 2px 13px #a2a2a2;
+  box-shadow: 1px 2px 13px #a2a2a2;
+  margin: 35px 0;
+  width: 100%;
   cursor: pointer;
+}
+
+#clear {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2em;
+  width: 100px;
+  height: 50px;
+  background-color: #EEEEEE;
+  color: #795548;
+  border-radius: 15px;
+  margin: 0 20px;
+  -webkit-box-shadow: 1px 2px 13px #a2a2a2;
+          box-shadow: 1px 2px 13px #a2a2a2;
+  width: 35%;
+  cursor: pointer;
+}
+
+@media all and (max-width: 425px) {
+  #clear {
+    font-size: 1.5em;
+    width: 60%;
+  }
 }
 
 .products {
@@ -356,7 +402,7 @@ form .text:focus {
 }
 
 #cart table thead {
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 #cart table tbody,
