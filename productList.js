@@ -1,9 +1,12 @@
 var articlesElt = document.getElementById("products");
-ajaxGet("http://localhost:3000/api/teddies", function (reponse) {
-    // Transforme la réponse en un tableau d'articles
+
+// Création d'une boucle sur une requête GET pour récupérer chaque article
+
+ajaxGet("http://localhost:3000/api/teddies").then( function (reponse) {
     var articles = JSON.parse(reponse);
     articles.forEach(function (article) {
-        // Ajout du titre et du contenu de chaque article
+
+        // Génération du code HTML à chaque nouvel article
 
         var ficheElt = document.createElement('div');
         ficheElt.classList.add("products");
@@ -23,6 +26,7 @@ ajaxGet("http://localhost:3000/api/teddies", function (reponse) {
 
         var clickableElt = document.createElement("a");
         clickableElt.setAttribute('id', 'goToProduct');
+        // Le lien nous redirige vers la page de l'article visé
         clickableElt.setAttribute('href', 'product.html?id=' + idElt);
 
         var imageElt = document.createElement("img");
@@ -34,7 +38,5 @@ ajaxGet("http://localhost:3000/api/teddies", function (reponse) {
         ficheElt.appendChild(titreElt);
         ficheElt.appendChild(contenuElt);
         ficheElt.appendChild(priceElt);
-        
-        
     });
 });

@@ -61,3 +61,38 @@
         font-size: 2.5em;
     }
 }
+
+@media all and (max-width:425px) {
+
+
+    #article {
+        flex-direction: column;
+
+        #product {
+            h3 {
+                margin-bottom: 0;
+            }
+
+            #productImg {
+                width: 80%;
+            }
+
+            #description {
+                width: 90%;
+            }
+        }
+
+        #custom {
+            margin: auto;
+
+            #price {
+                font-size: 2em;
+                margin: auto auto 25px;
+            }
+
+            #addToCart {
+                margin: 25px auto;
+            }
+        }
+    }
+}

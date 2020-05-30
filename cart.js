@@ -7,8 +7,7 @@ if (storageCart) {
 if (cart) {
     for (const id of cart) {
 
-        ajaxGet("http://localhost:3000/api/teddies/" + id, function (reponse) {
-            // Transforme la réponse en un tableau d'articles
+        ajaxGet("http://localhost:3000/api/teddies/" + id).then(function (reponse) {
             var article = JSON.parse(reponse);
 
             var arrayBody = document.getElementById('arrayBody');
@@ -22,10 +21,10 @@ if (cart) {
             qte.setAttribute("id", "qte");
             tdImg.setAttribute("id", "tdImg");
 
-                img.src = article.imageUrl;
-                tdName.textContent = article.name;
-                tdPrice.textContent = (article.price / 100);
-                qte.textContent = 1;
+            img.src = article.imageUrl;
+            tdName.textContent = article.name;
+            tdPrice.textContent = (article.price / 100);
+            qte.textContent = 1;
 
             document.getElementById('clear').addEventListener('click', function (event) {
                 cart = [];
@@ -42,6 +41,8 @@ if (cart) {
         });
 
     };
+    //On additionne le prix de chaque article
+    //SetTimeout permet d'avoir le temps d'effectuer le calcul avant d'afficher le résultat
     setTimeout(function () {
         var prices = document.querySelectorAll('.tdPrice');
         let total = 0;
@@ -49,24 +50,8 @@ if (cart) {
             total += Number(prices[i].textContent);
             prices[i].textContent += ",00 €";
         };
-        document.getElementById('total').textContent = (total +"€");
+        document.getElementById('total').textContent = (total + "€");
         localStorage.setItem('total', JSON.stringify(total));
     }, 500);
-
-    
-
-    
-
-
-    /*
-    var contact = []; 
-
-    document.getElementById('myForm').addEventListener('submit', function(event){
-        contact.push(event.target.value);
-    })
-    contact.push(cart);
-    localStorage.setItem('contact', JSON.stringify(contact));
-
-    console.log(contact); */
 
 };

@@ -81,3 +81,21 @@ footer {
         background: $principalClr;
     }
 }
+
+@media all and (max-width:425px) {
+    nav {
+        h1 {
+            font-size: 2.5em;
+            margin: auto 0;
+
+            a {
+                color: $secondaryClr;
+            }
+        }
+
+        #cartIco {
+            margin: auto 0;
+            color: $principalClr;
+        }
+    }
+}

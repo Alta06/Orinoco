@@ -50,3 +50,49 @@
     }
 }
 
+
+@media all and (max-width:425px) {
+
+#cart {
+    h2 {
+        font-size: 2em;
+        margin-bottom: 50px;
+    }
+
+    table {
+        margin: auto;
+        empty-cells: hide;
+        color: $principalClr;
+
+        thead {
+            font-size: 1.5em;
+        }
+
+        tbody,
+        tfoot {
+            font-size: 1.5em;
+
+            td {
+                margin-bottom: 25px;
+                text-align: center;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            #tdImg {
+                width: 30%;
+            }
+
+            .tdPrice {
+                width: 30%;
+            }
+        }
+
+        tfoot {
+            line-height: 300%;
+        }
+    }
+}
+}
