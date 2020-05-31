@@ -47,6 +47,8 @@ var data = new Object();
                     localStorage.setItem('lastName', JSON.stringify(reponse.contact.lastName));
                     localStorage.setItem('orderId', JSON.stringify(reponse.orderId));
                     localStorage.setItem('totalPrice', JSON.stringify(totalPrice));
+
+                    window.location = "order.html";
                 }
             }, 100)
         },

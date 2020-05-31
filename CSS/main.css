@@ -291,7 +291,7 @@ form .text:focus {
   }
 }
 
-.products {
+.product {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -307,35 +307,35 @@ form .text:focus {
   color: #795548;
 }
 
-.products img {
+.product img {
   margin-top: 35px;
 }
 
-.products h3 {
+.product h3 {
   font-size: 3em;
   font-family: 'Kalam', cursive;
   border-bottom: solid 3px #795548;
 }
 
-.products .description {
+.product .description {
   font-size: 1.3em;
   color: #795548;
   width: 70%;
 }
 
-.products .price {
+.product .price {
   font-size: 2.5em;
 }
 
 @media all and (max-width: 425px) {
-  .products img {
+  .product img {
     width: 100%;
     margin: 0;
   }
-  .products h3 {
+  .product h3 {
     margin-bottom: 0;
   }
-  .products .description {
+  .product .description {
     width: 80%;
   }
 }

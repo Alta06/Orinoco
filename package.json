@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jasmine" ,
     "build": "webpack",
     "start": "webpack-dev-server"
   },
@@ -18,5 +18,8 @@
     "mongoose": "^5.3.8",
     "mongoose-unique-validator": "^2.0.2",
     "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "jasmine": "^3.5.0"
   }
 }

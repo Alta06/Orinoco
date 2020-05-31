@@ -9,7 +9,7 @@ ajaxGet("http://localhost:3000/api/teddies").then( function (reponse) {
         // Génération du code HTML à chaque nouvel article
 
         var ficheElt = document.createElement('div');
-        ficheElt.classList.add("products");
+        ficheElt.classList.add("product");
 
         var titreElt = document.createElement("h3");
         titreElt.textContent = article.name;

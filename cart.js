@@ -25,7 +25,7 @@ if (cart) {
             tdName.textContent = article.name;
             tdPrice.textContent = (article.price / 100);
             qte.textContent = 1;
-
+            
             document.getElementById('clear').addEventListener('click', function (event) {
                 cart = [];
                 JSON.stringify(localStorage.setItem('cart', cart));
