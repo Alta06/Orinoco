@@ -1,4 +1,7 @@
-var products = JSON.parse(localStorage.getItem('cart'));
+var cart = JSON.parse(localStorage.getItem('cart'));
+var id = cart.map(a => a.id);
+var products = [];
+products.push(id);
 var data = new Object();
 
 //On récupère les entrées de chaque champs et on les stocks dans un objet "contact"

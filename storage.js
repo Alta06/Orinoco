@@ -1,4 +1,5 @@
 var storageCart = localStorage.getItem('cart');
+var storageSum = localStorage.getItem('sum');
 var firstName = localStorage.getItem('firstName');
     var lastName = localStorage.getItem('lastName');
     var orderId = localStorage.getItem('orderId');

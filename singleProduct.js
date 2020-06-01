@@ -5,8 +5,8 @@ var img = document.getElementById('productImg');
 var title = document.getElementById('name');
 var description = document.getElementById('description');
 var price = document.getElementById('price');
-var cart = [];
 var addToCart = document.getElementById('addToCart');
+var cart = [];
 
 //On récupère les informations liées à l'id concerné
 
@@ -27,22 +27,49 @@ ajaxGet("http://localhost:3000/api/teddies/" + id).then(function (reponse) {
         el.value = opt;
         select.appendChild(el);
     }
-
-    var numberOfproduct = 1;
+    console.log(article.name);
 
     //Au click sur le bouton ajout au panier, l'id du produit est ajouté dans le tableau "cart"
     addToCart.addEventListener('click', function () {
-        cart.push(id);
+        var obj = {
+            id: id,
+            qte: 1,
+            name: article.name,
+            price: article.price,
+            img: article.imageUrl
+        }
+
+        function add(cart, id) {
+            const found = cart.some(el => el.id === id);
+            if (!found) {
+                cart.push(obj)
+            } else {
+                cart.map(function (obj) {
+                    console.log(id);
+                    obj.qte++;
+                })
+                cart.forEach(function (obj) {
+                    var sum = cart.map(p => p.price * p.qte).reduce((a,b) => a + b);
+
+                    localStorage.setItem('sum', JSON.stringify(sum));
+                    console.log(sum);
+                })
+
+            };
+            return cart;
+        }
+        console.log(cart);
+        
+        add(cart, id);
 
         if (!document.getElementById('popProduct')) {
             var pop = document.createElement('span');
             cartIco.appendChild(pop);
             pop.setAttribute('id', 'popProduct');
         }
-        document.getElementById('popProduct').textContent = cart.length;
-        numberOfproduct++;
+        document.getElementById('popProduct').textContent = "+1";
 
         localStorage.setItem('cart', JSON.stringify(cart));
     });
-});
 
+});
