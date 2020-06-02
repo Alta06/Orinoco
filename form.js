@@ -1,4 +1,5 @@
 var cart = JSON.parse(localStorage.getItem('cart'));
+//On récupère les id des produits dans le tableau cart et on les places dans le tableau products
 var id = cart.map(a => a.id);
 var products = [];
 products.push(id);
@@ -38,7 +39,7 @@ var data = new Object();
             request.open("POST", "http://localhost:3000/api/teddies/order");
             request.setRequestHeader("Content-Type", "application/json");
             request.send(data);
-         
+
             setTimeout(function () {
                 if (request.status == 201) {
                     var reponseJson = request.responseText;

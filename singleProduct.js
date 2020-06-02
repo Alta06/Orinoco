@@ -29,7 +29,7 @@ ajaxGet("http://localhost:3000/api/teddies/" + id).then(function (reponse) {
     }
     console.log(article.name);
 
-    //Au click sur le bouton ajout au panier, l'id du produit est ajouté dans le tableau "cart"
+    //Au click sur le bouton ajout au panier, l'objet est ajouté dans le tableau "cart"
     addToCart.addEventListener('click', function () {
         var obj = {
             id: id,
@@ -38,28 +38,23 @@ ajaxGet("http://localhost:3000/api/teddies/" + id).then(function (reponse) {
             price: article.price,
             img: article.imageUrl
         }
-
+        //On vérifie si l'objet est déja dans le panier 
         function add(cart, id) {
             const found = cart.some(el => el.id === id);
+            //Si non, on l'ajouter
             if (!found) {
                 cart.push(obj)
+                //Si oui, on ajoute 1 à la quantité et on multiplie le prix par celle-ci
             } else {
                 cart.map(function (obj) {
-                    console.log(id);
-                    obj.qte++;
-                })
-                cart.forEach(function (obj) {
-                    var sum = cart.map(p => p.price * p.qte).reduce((a,b) => a + b);
-
-                    localStorage.setItem('sum', JSON.stringify(sum));
-                    console.log(sum);
+                    if (obj.id == id){
+                        obj.qte++;
+                    }
                 })
 
             };
             return cart;
         }
-        console.log(cart);
-        
         add(cart, id);
 
         if (!document.getElementById('popProduct')) {
@@ -67,8 +62,16 @@ ajaxGet("http://localhost:3000/api/teddies/" + id).then(function (reponse) {
             cartIco.appendChild(pop);
             pop.setAttribute('id', 'popProduct');
         }
-        document.getElementById('popProduct').textContent = "+1";
 
+        function amount(obj) {
+            return obj.qte;
+        }
+
+        function sum(prev, next) {
+            return prev + next;
+        }
+
+        document.getElementById('popProduct').textContent = cart.map(amount).reduce(sum);
         localStorage.setItem('cart', JSON.stringify(cart));
     });
 

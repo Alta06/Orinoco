@@ -101,6 +101,9 @@ footer ul {
     margin: auto 0;
     color: #795548;
   }
+  footer ul {
+    width: 60%;
+  }
 }
 
 form {
