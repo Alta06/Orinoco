@@ -94,14 +94,27 @@ footer {
         }
 
         #cartIco {
+            width: 70px;
             margin: auto 0;
             color: $principalClr;
         }
     }
 
+    h2 {
+        font-size: 3em;
+    }
+
     footer {
         ul {
             width: 60%;
+        }
+    }
+}
+
+@media all and (max-width:320px) {
+    nav {
+        h1 {
+            font-size: 2em;
         }
     }
 }
