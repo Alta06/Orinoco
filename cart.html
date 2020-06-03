@@ -58,17 +58,17 @@
 
             <form id="myForm" action="/order" method="POST">
                 <label for="firstName">Prénom</label>
-                <input type="text" class="text" name="firstName" id="firstName" pattern="[a-zA-Z]{2,}" maxlength="20"  required>
+                <input type="text" class="text" name="firstName" id="firstName" pattern="[a-zA-Z-]{2,}" maxlength="20"  required>
                 <label for="lastName">Nom</label>
-                <input type="text" class="text" name="lastName" id="lastName" pattern="[a-zA-Z]{2,}" maxlength="20" 
+                <input type="text" class="text" name="lastName" id="lastName" pattern="[a-zA-Z-]{2,}" maxlength="20" 
                     required>
                 <label for="email">Email</label>
                 <input type="email" class="text" name="email" id="email" maxlength="30"
                     pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" required>
                 <label for="adress">Adresse</label>
-                <input type="text" class="text" name="address" id="adress" pattern="[a-zA-Z]{2,}" maxlength="50" required>
+                <input type="text" class="text" name="address" id="adress" pattern="[a-zA-Z-]{2,}" maxlength="50" required>
                 <label for="city">Ville</label>
-                <input type="text" class="text" name="city" id="city" pattern="[a-zA-Z]{2,}" maxlength="20" required>
+                <input type="text" class="text" name="city" id="city" pattern="[a-zA-Z-]{2,}" maxlength="20" required>
 
                 <input id="btnSubmit" type="submit" value="Envoyer">
 
