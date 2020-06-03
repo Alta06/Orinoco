@@ -27,7 +27,6 @@ ajaxGet("http://localhost:3000/api/teddies/" + id).then(function (reponse) {
         el.value = opt;
         select.appendChild(el);
     }
-    console.log(article.name);
 
     //Au click sur le bouton ajout au panier, l'objet est ajouté dans le tableau "cart"
     addToCart.addEventListener('click', function () {
