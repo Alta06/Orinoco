@@ -1,3 +1,5 @@
+document.getElementById('popProduct').textContent = localStorage.getItem('nbOfProduct');
+
 const articlesElt = document.getElementById("products");
 
 // Création d'une boucle sur une requête GET pour récupérer chaque article
@@ -8,29 +10,26 @@ ajaxGet("http://localhost:3000/api/teddies").then((reponse) => {
 
         // Génération du code HTML à chaque nouvel article
 
-        const ficheElt = document.createElement('div');
+        const ficheElt = document.createElement('div'),
+            titreElt = document.createElement("h3"),
+            contenuElt = document.createElement("p"),
+            priceElt = document.createElement("p"),
+            clickableElt = document.createElement("a"),
+            imageElt = document.createElement("img");
+        
         ficheElt.classList.add("product");
-
-        const titreElt = document.createElement("h3");
-        titreElt.textContent = article.name;
-
-        const contenuElt = document.createElement("p");
-        contenuElt.textContent = article.description;
         contenuElt.classList.add("description");
-
-        const priceElt = document.createElement("p");
-        priceElt.textContent = (article.price /100 + ',00 €');
         priceElt.classList.add("price");
 
-        const idElt = article._id;
-
-        const clickableElt = document.createElement("a");
-        clickableElt.setAttribute('id', 'goToProduct');
-        // Le lien nous redirige vers la page de l'article visé
-        clickableElt.setAttribute('href', 'product.html?id=' + idElt);
-
-        const imageElt = document.createElement("img");
+        titreElt.textContent = article.name;
+        contenuElt.textContent = article.description;
+        priceElt.textContent = (article.price / 100 + ',00 €');
         imageElt.src = article.imageUrl;
+        idElt = article._id;
+
+        // Le lien nous redirige vers la page de l'article visé
+        clickableElt.setAttribute('id', 'goToProduct');
+        clickableElt.setAttribute('href', 'product.html?id=' + idElt);
 
         articlesElt.appendChild(ficheElt);
         ficheElt.appendChild(clickableElt);
@@ -40,5 +39,3 @@ ajaxGet("http://localhost:3000/api/teddies").then((reponse) => {
         ficheElt.appendChild(priceElt);
     };
 });
-
-document.getElementById('popProduct').textContent = localStorage.getItem('nbOfProduct');

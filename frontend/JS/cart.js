@@ -1,18 +1,16 @@
-//On crée un tableau et une nouvelle ligne pour chaque nouveau produit
-document.getElementById('btnSubmit').disabled = true;
+document.getElementById("popProduct").textContent = localStorage.getItem("nbOfProduct");
+document.getElementById("btnSubmit").disabled = true;
 
 if (cart === undefined) {
-    document.getElementById('cartTitle').textContent = "Votre panier est vide";
+    document.getElementById("cartTitle").textContent = "Votre panier est vide";
 }
+//On crée un tableau et une nouvelle ligne pour chaque nouveau produit
 
 for (let item of cart) {
 
     let name, price, quantity;
-        name = item.name,
-        price = item.price,
-        quantity = item.qte;
-
-    const arrayBody = document.getElementById('arrayBody'),
+    
+    const arrayBody = document.getElementById("arrayBody"),
         tr = document.createElement("tr"),
         tdImg = document.createElement("td"),
         img = document.createElement("img"),
@@ -23,6 +21,10 @@ for (let item of cart) {
     tdPrice.setAttribute("class", "tdPrice");
     tdqte.setAttribute("class", "qte");
     tdImg.setAttribute("id", "tdImg");
+
+    name = item.name,
+        price = item.price,
+        quantity = item.qte;
 
     img.src = item.img;
     tdName.textContent = name;
@@ -37,13 +39,13 @@ for (let item of cart) {
     tr.appendChild(tdPrice);
 }
 
-let clear = document.getElementById('clear').addEventListener('click', () => {
+let clear = document.getElementById("clear").addEventListener("click", () => {
     localStorage.clear();
     location.reload();
 })
 
 //On additionne le prix de chaque article
-let prices = document.querySelectorAll('.tdPrice'),
+let prices = document.querySelectorAll(".tdPrice"),
     total = 0;
 
 for (let price of prices) {
@@ -51,5 +53,4 @@ for (let price of prices) {
     price.textContent += ",00 €"
 }
 
-document.getElementById('total').textContent = (total + "€");
-document.getElementById('popProduct').textContent = localStorage.getItem('nbOfProduct');
+document.getElementById("total").textContent = (total + ",00 €");
