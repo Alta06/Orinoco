@@ -2,9 +2,9 @@ const articlesElt = document.getElementById("products");
 
 // Création d'une boucle sur une requête GET pour récupérer chaque article
 
-ajaxGet("http://localhost:3000/api/teddies").then( function (reponse) {
+ajaxGet("http://localhost:3000/api/teddies").then((reponse) => {
     const articles = JSON.parse(reponse);
-    articles.forEach(function (article) {
+    for (let article of articles) {
 
         // Génération du code HTML à chaque nouvel article
 
@@ -38,7 +38,7 @@ ajaxGet("http://localhost:3000/api/teddies").then( function (reponse) {
         ficheElt.appendChild(titreElt);
         ficheElt.appendChild(contenuElt);
         ficheElt.appendChild(priceElt);
-    });
+    };
 });
 
 document.getElementById('popProduct').textContent = localStorage.getItem('nbOfProduct');

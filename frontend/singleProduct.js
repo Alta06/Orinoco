@@ -10,7 +10,7 @@ cart = [];
 
 //On récupère les informations liées à l'id concerné
 
-ajaxGet("http://localhost:3000/api/teddies/" + id).then(function (reponse) {
+ajaxGet("http://localhost:3000/api/teddies/" + id).then((reponse) => {
     const article = JSON.parse(reponse);
     img.src = article.imageUrl;
     img.setAttribute("alt", "Ours en peluche " + article.name);
@@ -20,6 +20,7 @@ ajaxGet("http://localhost:3000/api/teddies/" + id).then(function (reponse) {
 
     const select = document.getElementById("colorSelect");
     const options = article.colors;
+    
     for (let colors of options) {
         let el = document.createElement("option");
         el.textContent = colors;
@@ -28,8 +29,8 @@ ajaxGet("http://localhost:3000/api/teddies/" + id).then(function (reponse) {
     }
 
     //Au click sur le bouton ajout au panier, l'objet est ajouté dans le tableau "cart"
-    addToCart.addEventListener('click', function () {
-        const obj = {
+    addToCart.addEventListener('click', () => {
+        const teddy = {
             id: id,
             qte: 1,
             name: article.name,
@@ -41,23 +42,21 @@ ajaxGet("http://localhost:3000/api/teddies/" + id).then(function (reponse) {
             let found = cart.some(el => el.id === id);
             //Si non, on l'ajoute
             if (!found) {
-                cart.push(obj)
+                cart.push(teddy)
                 //Si oui, on ajoute 1 à la quantité et on multiplie le prix par celle-ci
             } else {
-                cart.map(function (obj) {
-                    if (obj.id == id) {
-                        obj.qte++;
+                cart.map((teddy) => {
+                    if (teddy.id == id) {
+                        teddy.qte++;
                     }
                 })
-
             };
-            return cart;
         }
 
         add(cart, id);
 
-        let amount = (obj) => {
-            return obj.qte;
+        let amount = (teddy) => {
+            return teddy.qte;
         }
 
         let sum = (prev, next) => {
@@ -65,12 +64,9 @@ ajaxGet("http://localhost:3000/api/teddies/" + id).then(function (reponse) {
         }
 
         document.getElementById('popProduct').textContent = cart.map(amount).reduce(sum);
-
         localStorage.setItem('nbOfProduct', JSON.stringify(cart.map(amount).reduce(sum)));
-
         localStorage.setItem('cart', JSON.stringify(cart));
     });
-
 });
 
 document.getElementById('popProduct').textContent = localStorage.getItem('nbOfProduct');
