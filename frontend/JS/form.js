@@ -1,17 +1,19 @@
 //On récupère les id des produits dans le tableau cart et on les places dans le tableau products
-let id = cart.map(a => a.id);
+let id = cart.map(a => a.id),
+    data = {},
+    form = document.getElementById("myForm");
+
 const products = [];
 products.push(id);
-let data = new Object();
 
 //On récupère les entrées de chaque champs et on les stocks dans un objet "contact"
-function getFormData(form) {
-    const contact = {};
-    const elements = form.querySelectorAll("input");
-    for (let i = 0; i < elements.length; ++i) {
-        let element = elements[i];
-        let name = element.name;
-        let value = element.value;
+const getFormData = (form) => {
+    const contact = {},
+        elements = form.querySelectorAll("input");
+
+    for (element of elements) {
+        let name = element.name,
+            value = element.value;
 
         if (name) {
             contact[name] = value;
@@ -25,12 +27,12 @@ if (id.length >= 1) {
 }
 
 //Lors de l'évènement "submit", on stock contact et products dans un objet "data"
-let form = document.getElementById("myForm");
 
-form.addEventListener("submit", (e) =>{
+form.addEventListener("submit", (e) => {
         e.preventDefault();
 
         let contact = getFormData(form);
+
         data = {
             contact,
             products
@@ -45,8 +47,8 @@ form.addEventListener("submit", (e) =>{
 
         setTimeout(() => {
             if (request.status == 201) {
-                let reponseJson = request.responseText;
-                let reponse = JSON.parse(reponseJson);
+                let reponseJson = request.responseText,
+                    reponse = JSON.parse(reponseJson);
 
                 localStorage.setItem('firstName', JSON.stringify(reponse.contact.firstName));
                 localStorage.setItem('lastName', JSON.stringify(reponse.contact.lastName));

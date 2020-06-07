@@ -29,6 +29,8 @@ app.use((req, res, next) => {
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use(express.static(__dirname + "/../frontend"));
+app.use(express.static(__dirname + "/../frontend/js"));
+
 
 app.use(bodyParser.json());
 
