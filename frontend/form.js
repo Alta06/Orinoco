@@ -1,19 +1,17 @@
-var cart = JSON.parse(localStorage.getItem('cart'));
 //On récupère les id des produits dans le tableau cart et on les places dans le tableau products
-var id = cart.map(a => a.id);
-var products = [];
+let id = cart.map(a => a.id);
+const products = [];
 products.push(id);
-var data = new Object();
+let data = new Object();
 
 //On récupère les entrées de chaque champs et on les stocks dans un objet "contact"
-(function () {
     function getFormData(form) {
-        var contact = {};
-        var elements = form.querySelectorAll("input");
-        for (var i = 0; i < elements.length; ++i) {
-            var element = elements[i];
-            var name = element.name;
-            var value = element.value;
+        const contact = {};
+        const elements = form.querySelectorAll("input");
+        for (let i = 0; i < elements.length; ++i) {
+            let element = elements[i];
+            let name = element.name;
+            let value = element.value;
 
             if (name) {
                 contact[name] = value;
@@ -23,29 +21,34 @@ var data = new Object();
     }
 
     //Lors de l'évènement "submit", on stock contact et products dans un objet "data"
-    var form = document.getElementById("myForm");
+    let form = document.getElementById("myForm");
+
+    if (id.length >= 1 ) {
+        document.getElementById('btnSubmit').disabled = false;
+
+    }
+
     form.addEventListener("submit", function (e) {
             e.preventDefault();
-            var contact = getFormData(form);
+            
+            let contact = getFormData(form);
 
-            data = {
-                "contact": contact,
-                "products": products
-            };
+            data = { contact, products };
             //Puis on le formate en JSON pour l'envoyer via une requête POST
             data = JSON.stringify(data);
 
-            var request = new XMLHttpRequest();
+            let request = new XMLHttpRequest();
             request.open("POST", "http://localhost:3000/api/teddies/order");
             request.setRequestHeader("Content-Type", "application/json");
             request.send(data);
 
             setTimeout(function () {
                 if (request.status == 201) {
-                    var reponseJson = request.responseText;
-                    var reponse = JSON.parse(reponseJson);
-                    var testStorage = localStorage.getItem('total');
-                    var totalPrice = JSON.parse(testStorage);
+                    let reponseJson = request.responseText;
+                    let reponse = JSON.parse(reponseJson);
+                    let testStorage = localStorage.getItem('total');
+                    let totalPrice = JSON.parse(testStorage);
+                    
 
                     localStorage.setItem('firstName', JSON.stringify(reponse.contact.firstName));
                     localStorage.setItem('lastName', JSON.stringify(reponse.contact.lastName));
@@ -57,5 +60,4 @@ var data = new Object();
             }, 100)
         },
         false);
-})
-();
+;

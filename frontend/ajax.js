@@ -1,6 +1,6 @@
 function ajaxGet(url) {
     return new Promise(function(resolve) {
-    var req = new XMLHttpRequest();
+    let req = new XMLHttpRequest();
     req.onload = function () {
         resolve(req.responseText);
     }

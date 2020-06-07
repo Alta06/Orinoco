@@ -359,6 +359,10 @@ form .text:focus {
   display: flex;
 }
 
+#article #product {
+  width: 80%;
+}
+
 #article #product h3 {
   text-align: center;
 }

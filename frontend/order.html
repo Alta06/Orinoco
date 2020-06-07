@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 
+
     <title>Orinounours</title>
 </head>
 
@@ -19,34 +20,34 @@
         <header>
             <nav>
                 <h1> <a href="index.html">Orinounours</a> </h1>
-                <a id="cartIco" href="cart.html"><em class="fas fa-shopping-cart"></em></a>
+                <a id="cartIco" href="cart.html"><em class="fas fa-shopping-cart"></em><span id="popProduct"></span></a>
             </nav>
         </header>
 
+        <section class="orderConfirm">
+            <h2>Merci d'avoir commandé</h2>
+            <p id="name"></p>
+            <p id="amount"></p>
+            <p id="orderId"></p>
 
-        <section id="articles">
-            <h2>Nos nounours</h2>
 
-            <div id="products">
-            </div>
-
+            <p id="test"></p>
         </section>
 
         <footer>
             <p>Orinounours by Orinoco</p>
             <ul>
-                <li><a class="footerLink" href="#"><em class="fab fa-twitter-square"></em></a></li>
-                <li><a class="footerLink" href="#"><em class="fab fa-facebook-square"></em></a></li>
-                <li><a class="footerLink" href="#"><em class="fab fa-instagram-square"></em></a></li>
+                <li><em class="fab fa-twitter-square"></em></li>
+                <li><em class="fab fa-facebook-square"></em></li>
+                <li><em class="fab fa-instagram-square"></em></li>
             </ul>
         </footer>
 
     </div>
 
     <script src="ajax.js"></script>
-    <script src="productList.js"></script>
     <script src="storage.js"></script>
-
+    <script src="order.js"></script>
 </body>
-</html>
 
+</html>
